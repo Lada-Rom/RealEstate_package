@@ -18,4 +18,4 @@ def predict(geo_lat, geo_lon, region, level, levels, rooms, area, object_type):
     prediction = model.predict(case)
     return prediction[0]
     
- predict(59.805808, 30.376141, 2661, 8, 10, 3, 82.6, 1)
+predict(59.805808, 30.376141, 2661, 8, 10, 3, 82.6, 1)
