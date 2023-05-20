@@ -1,1 +1,6 @@
 *.bak
+.vscode
+.venv
+.git
+*pycache*
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <script src="./node_modules/jquery/dist/jquery.js"></script>
+    </head>
+    <script type="text/javascript">
+        const url = 'http://0.0.0.0:8000/predict';
+
+        async function predict() {
+            var res = await $.ajax({
+                url: url, 
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify({
+                    "geo_lat": 80.805808,
+                    "geo_lon": 30.376141,
+                    "region": 2661,
+                    "level": 8,
+                    "levels": 10,
+                    "rooms": 3,
+                    "area": 82.6,
+                    "object_type": 1
+                }),
+            }); 
+            console.log(res)
+        }
+    </script>
+    <body>
+        <div class="Authentication">
+            <h1>RealEstate Super DApp</h1>
+            <button id="button" type="submit">Let's rock!</button>
+        </div>
+        <script type="text/javascript">
+            document.getElementById("button").onclick = function () {
+                predict();
+            };
+        </script>
+    </body>
+</html>
