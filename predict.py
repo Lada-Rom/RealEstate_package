@@ -24,3 +24,4 @@ def predict(geo_lat, geo_lon, region, level, levels, rooms, area, object_type):
 if __name__ == '__main__':
     price = predict(80.805808, 30.376141, 2661, 8, 10, 3, 82.6, 1)
     print(f"{price:.2f} Wei")
+
