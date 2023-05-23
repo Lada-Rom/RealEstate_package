@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 #from loguru import logger
 from pydantic import BaseModel
-from predict import predict
+from package.predict import predict
 import pandas as pd
 import json
 import uvicorn
