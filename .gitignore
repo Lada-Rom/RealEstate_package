@@ -5,3 +5,6 @@
 .git
 *pycache*
 dataset/
+build/
+dist/
+

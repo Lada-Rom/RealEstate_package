@@ -1,0 +1,11 @@
+include *.txt
+include *.md
+recursive-include ./real_estate_model/*
+
+include real_estate_model/trained_models/*.txt
+include real_estate_model/config.yml
+
+include ./requirements/requirements.txt
+include ./requirements/test_requirements.txt
+
+recursive-exclude * __pycache__
