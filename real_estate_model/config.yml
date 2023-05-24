@@ -27,7 +27,7 @@ variables_to_drop:
 random_state: 71
 train_size: 0.8
 
-num_boost_round: 200
+num_boost_round: 5000
 early_stopping_rounds: 100
 verbose_eval: 100
 metric: rmse

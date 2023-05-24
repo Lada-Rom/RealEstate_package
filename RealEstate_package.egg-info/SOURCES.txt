@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+RealEstate_package.egg-info/PKG-INFO
+RealEstate_package.egg-info/SOURCES.txt
+RealEstate_package.egg-info/dependency_links.txt
+RealEstate_package.egg-info/requires.txt
+RealEstate_package.egg-info/top_level.txt
+real_estate_model/__init__.py
+real_estate_model/config.py
+real_estate_model/predict.py
+real_estate_model/train.py
+tests/test_prediction.py

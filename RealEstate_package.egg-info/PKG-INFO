@@ -1,11 +1,11 @@
 Metadata-Version: 2.1
-Name: RealEstate-model
+Name: RealEstate-package
 Version: 1.0.0
 Summary: МЛ-модель, предсказывающая стоимость недвижимости по её параметрам.
-Home-page: https://github.com/Lada-Rom/RealEstate_model
+Home-page: https://github.com/Lada-Rom/RealEstate_package
 Author: Клейменов А., Толстенко Л.
 Author-email: 8)
-Project-URL: Documentation, https://github.com/Lada-Rom/RealEstate_model
+Project-URL: Documentation, https://github.com/Lada-Rom/RealEstate_package
 Keywords: lightgbm python real_estate price
 Classifier: Programming Language :: Python :: 3.8
 Classifier: License :: OSI Approved :: MIT License

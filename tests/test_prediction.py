@@ -1,6 +1,6 @@
 import numpy as np
 
-from package.predict import predict
+from real_estate_model.predict import predict
 
 
 def test_predict():
