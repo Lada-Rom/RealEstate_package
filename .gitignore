@@ -1,6 +1,7 @@
 *.bak
 .vscode
 .venv
+.tox
 .git
 *pycache*
 dataset/

@@ -1,7 +1,8 @@
 from pathlib import Path
-from strictyaml import YAML, load
-from pydantic import BaseModel
 from typing import List
+
+from pydantic import BaseModel
+from strictyaml import YAML, load
 
 
 class Config(BaseModel):
@@ -24,8 +25,12 @@ class Config(BaseModel):
 
 
 def fetch_config_from_yaml(cfg_path: Path = None) -> YAML:
+    PACKAGE_ROOT = Path(__file__).resolve().parent
+    CONFIG_FILE_PATH = PACKAGE_ROOT / "config.yml"
+
     if not cfg_path:
-        cfg_path = "./config.yml"
+        cfg_path = CONFIG_FILE_PATH
+        # cfg_path = "./config.yml"
 
     if cfg_path:
         with open(cfg_path, "r") as conf_file:
