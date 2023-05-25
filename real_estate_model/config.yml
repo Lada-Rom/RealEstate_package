@@ -23,9 +23,10 @@ variables_to_drop:
   - time
   - building_type
   - kitchen_area
+  - region
 
 random_state: 71
-train_size: 0.8
+test_size: 0.2
 
 num_boost_round: 5000
 early_stopping_rounds: 100
@@ -36,11 +37,12 @@ metric: rmse
 predictors:
   - geo_lat
   - geo_lon
-  - region
   - level
   - levels
   - rooms
   - area
   - object_type
 
+#./trained_models/lgb_model.txt
+#./trained_models/lightgbm_1685012149.txt
 predict_model: ./trained_models/lgb_model.txt

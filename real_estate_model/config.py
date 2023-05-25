@@ -4,6 +4,9 @@ from typing import List
 from pydantic import BaseModel
 from strictyaml import YAML, load
 
+PACKAGE_ROOT = Path(__file__).resolve().parent
+CONFIG_FILE_PATH = PACKAGE_ROOT / "config.yml"
+
 
 class Config(BaseModel):
     dataset: str
@@ -13,7 +16,7 @@ class Config(BaseModel):
     variables_to_drop: List[str]
 
     random_state: int
-    train_size: float
+    test_size: float
 
     num_boost_round: int
     early_stopping_rounds: int
@@ -25,9 +28,6 @@ class Config(BaseModel):
 
 
 def fetch_config_from_yaml(cfg_path: Path = None) -> YAML:
-    PACKAGE_ROOT = Path(__file__).resolve().parent
-    CONFIG_FILE_PATH = PACKAGE_ROOT / "config.yml"
-
     if not cfg_path:
         cfg_path = CONFIG_FILE_PATH
 
@@ -36,3 +36,21 @@ def fetch_config_from_yaml(cfg_path: Path = None) -> YAML:
             parsed_config = load(conf_file.read())
             return parsed_config
     raise OSError(f"Did not find config file at path: {cfg_path}")
+
+
+def set_config_field(field_name: str, value: str, cfg_path: Path = None):
+    if not cfg_path:
+        cfg_path = CONFIG_FILE_PATH
+
+    with open(cfg_path, "r") as conf_file:
+        lines = conf_file.readlines()
+
+    with open(cfg_path, "w") as conf_file:
+        for line in lines:
+            if line.find(field_name) != -1:
+                line = field_name + ": " + value
+            conf_file.write(line)
+
+
+if __name__ == "__main__":
+    set_config_field("predict_model", "./trained_models/lgb_model_v2.txt")
