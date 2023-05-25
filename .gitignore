@@ -7,4 +7,5 @@
 dataset/
 build/
 dist/
+*.egg-info/
 

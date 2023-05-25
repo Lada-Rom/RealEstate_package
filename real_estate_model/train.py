@@ -24,8 +24,11 @@ def train() -> None:
 
     # read training data
     PACKAGE_ROOT = Path(__file__).resolve().parent
-    DATASET_FILE_PATH = PACKAGE_ROOT / config.dataset
-    data = read_csv(DATASET_FILE_PATH)
+    if Path(config.dataset).is_file():
+        data = read_csv(config.dataset)
+    else:
+        print(f'ERROR! Specify dataset path - file "{config.dataset}" does not exists!')
+        return
 
     # process data
     price = data[data["price"] <= 0].index

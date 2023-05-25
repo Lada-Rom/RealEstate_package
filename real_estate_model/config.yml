@@ -15,7 +15,7 @@ features:
   - kitchen_area
 
 # train params
-dataset: ../dataset/Russia_dataset.csv
+dataset: /home/lada/projects/RealEstate_package/dataset/Russia_dataset.csv
 trained_model_path: ./trained_models/
 
 variables_to_drop:

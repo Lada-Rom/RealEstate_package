@@ -13,7 +13,7 @@ def list_reqs(fname="requirements.txt"):
 
 setup(
   name='RealEstate_package',
-  version='1.3.0',
+  version='1.4.0',
   license="BSD-3",
   author='Клейменов А., Толстенко Л.',
   author_email='notmy@gmail.com',
