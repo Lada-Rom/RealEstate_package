@@ -1,6 +1,11 @@
 *.bak
 .vscode
 .venv
+.tox
 .git
 *pycache*
+dataset/
+build/
+dist/
+*.egg-info/
 

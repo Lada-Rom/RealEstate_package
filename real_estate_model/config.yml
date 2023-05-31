@@ -1,0 +1,48 @@
+# general
+features:
+  - price
+  - date
+  - time
+  - geo_lat
+  - geo_lon
+  - region
+  - level
+  - levels
+  - rooms
+  - area
+  - object_type
+  - building_type
+  - kitchen_area
+
+# train params
+dataset: /home/lada/projects/RealEstate_package/dataset/Russia_dataset.csv
+trained_model_path: ./trained_models/
+
+variables_to_drop:
+  - date
+  - time
+  - building_type
+  - kitchen_area
+  - region
+
+random_state: 71
+test_size: 0.2
+
+num_boost_round: 5000
+early_stopping_rounds: 100
+verbose_eval: 100
+metric: rmse
+
+# predict params
+predictors:
+  - geo_lat
+  - geo_lon
+  - level
+  - levels
+  - rooms
+  - area
+  - object_type
+
+#./trained_models/lgb_model.txt
+#./trained_models/lightgbm_1685012149.txt
+predict_model: ./trained_models/lgb_model.txt
