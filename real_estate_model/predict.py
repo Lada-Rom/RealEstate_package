@@ -1,6 +1,7 @@
 from pathlib import Path
 
 import lightgbm as lgb
+import numpy as np
 import pandas as pd
 
 from real_estate_model.config import Config, fetch_config_from_yaml
@@ -21,7 +22,8 @@ def predict_raw(model, predictors_values):
     data = pd.DataFrame([predictors_values], columns=config.predictors)
     case = pd.DataFrame(data=data, index=[0])
     prediction = model.predict(case)
-    return prediction[0]
+    print(type(prediction[0]))
+    return np.float64("{:.2f}".format(prediction[0] / 150000 * 10**18))
 
 
 # geo_lat float
@@ -43,4 +45,4 @@ def predict(predictors_values):
 
 if __name__ == "__main__":
     price = predict([80.805808, 30.376141, 8, 10, 3, 82.6, 2])
-    print(f"{price:.2f} Rub")
+    print(f"{price} Wei")
