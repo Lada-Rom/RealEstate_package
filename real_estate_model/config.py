@@ -48,7 +48,7 @@ def set_config_field(field_name: str, value: str, cfg_path: Path = None):
     with open(cfg_path, "w") as conf_file:
         for line in lines:
             if line.find(field_name) != -1:
-                line = field_name + ": " + value
+                line = field_name + ": " + value + '\n'
             conf_file.write(line)
 
 
