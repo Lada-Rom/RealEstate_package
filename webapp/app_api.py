@@ -76,8 +76,13 @@ async def train_method():
     return res_dict
 
 @api_router.post("/change_model", status_code=200)
-async def change_method(filepath: str):
+async def change_model_method(filepath: str):
     set_config_field("predict_model", filepath)
+    return "success!"
+
+@api_router.post("/change_iterations", status_code=200)
+async def change_iterations_method(iter_num: int):
+    set_config_field("num_boost_round", str(iter_num))
     return "success!"
 
 
